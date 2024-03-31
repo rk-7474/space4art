@@ -6,6 +6,8 @@ services:
       MYSQL_ROOT_PASSWORD: password
     volumes:
      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+    networks:
+     - mynetwork
   # web:
   #   build:
   #     context: .
@@ -25,6 +27,8 @@ services:
     command: bash -c "npm ci && npm run build && node build"
     depends_on:
       - db
+    networks:
+      - mynetwork
   nginx:
     image: nginx:latest
     ports:
@@ -35,3 +39,9 @@ services:
     command: ["nginx"]
     depends_on:
       - web
+    networks:
+      - mynetwork
+
+networks:
+ mynetwork:
+    driver: bridge
