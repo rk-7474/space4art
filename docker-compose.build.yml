@@ -26,12 +26,14 @@ services:
     depends_on:
       - db
   nginx:
-    image: nginx:latest
+    build: ./nginx
+    image: nginx-ssl
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx:/etc/nginx
-    command: ["nginx"]
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/cert.pem:/etc/nginx/cert.pem
+      - ./nginx/key.pem:/etc/nginx/key.pem
     depends_on:
       - web
