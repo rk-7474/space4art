@@ -26,7 +26,8 @@ services:
     depends_on:
       - db
   nginx:
-    image: nginx:latest
+    build: ./nginx
+    image: nginx-ssl
     ports:
       - "80:80"
       - "443:443"
