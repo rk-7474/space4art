@@ -15,7 +15,7 @@
 
 	let frameVideoElement: HTMLElement;
 
-	$: if (frameVideoElement) frameVideoElement.innerHTML = $frameVideo.inner;
+	$: if (frameVideoElement) frameVideoElement.innerHTML = $frameVideo.inner + frameVideoElement.innerHTML;
 
 	$: {
 		sendUpdate(form);
@@ -59,10 +59,10 @@
 		{#if $showInfoInput}
 			<form method="post" action="?/info" class="container" id="info" use:enhance in:fade={{duration: 200}} out:fade={{duration: 200}}>
 				<h2 class="text-2xl my-3">Add new frame</h2>
-				<input value="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsfondo.info%2Fi%2Foriginal%2F5%2F0%2Fe%2F12051.jpg&f=1&nofb=1&ipt=b690017e4bc2b8d5c48ad32ad0635894d1eda00e4dcf7d49645591b9620024eb&ipo=images" autocomplete="off" name="url" type="text" placeholder="Inserisci URL immagine o video">
-				<input value="ciao" autocomplete="off" name="title" type="text" placeholder="Inserisci titolo opera...">
-				<input value="ciao" autocomplete="off" name="desc" type="text" placeholder="Inserisci descrizione opera...">
-				<input value="ciao" autocomplete="off" name="tags" type="text" placeholder="Inserisci tag...">
+				<input value="" autocomplete="off" name="url" type="text" placeholder="Inserisci URL immagine o video">
+				<input value="" autocomplete="off" name="title" type="text" placeholder="Inserisci titolo opera...">
+				<input value="" autocomplete="off" name="desc" type="text" placeholder="Inserisci descrizione opera...">
+				<input value="" autocomplete="off" name="tags" type="text" placeholder="Inserisci tag...">
 				<button type="submit" class="confirm">Conferma</button>
 			</form>
 		{/if}
@@ -84,7 +84,10 @@
 		{/if}
 		{#if $frameVideo.show === true}
 			<div class="frame" in:fade={{duration: 200}} out:fade={{duration: 200}} bind:this={frameVideoElement}>
-					
+				<div class="frameinfo">
+					<h1>{$frameVideo.title}</h1>
+					<p>{$frameVideo.desc}</p>
+				</div>
 			</div> 
 		{/if}
 	</div>

@@ -23,6 +23,8 @@ export const actions: Actions = {
 
       let [query, params] = formatSearch(search);
 
+      console.log("Search query: " + query, params);
+
       const [ feed ] = await pool.query<Rooms[]>(`select image, id, name, description, uuid, tags from rooms where ${query}`, [params]);
 
       return {feed};

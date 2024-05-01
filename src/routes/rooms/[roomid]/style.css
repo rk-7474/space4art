@@ -73,8 +73,9 @@ input[type="text"] {
 }
 
 .frame > img {
-    display: block;
-    width: 65vw;
+    display: flex;
+    min-height: 85vh;
+    max-width: 85vw;
     height: auto;
 }
 

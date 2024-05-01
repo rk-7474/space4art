@@ -7,8 +7,10 @@
 	export let data;
 	export let form: any;
 
-	let editors_list: {username: string, id: string}[] = [];
-	let search_results: {username: string, id: string}[] = [];
+    interface User {username: string, id: string};
+
+	let editors_list: User[] = [];
+	let search_results: User[] = [];
 
     let room_id: any;
 
@@ -113,7 +115,7 @@
       <h3 class="font-bold text-center text-lg">Permessi</h3>
       <div class="flex flex-col items-center">
         <form action="?/search" method="post" use:enhance>
-            <input type="text" name="q" bind:value={searchQuery} class="border-gray-500 border">
+            <input type="text" name="q" bind:value={searchQuery} class="border-gray-500 border w-10">
             <button>Search</button>
         </form>
         {#each search_results as {username, id} }

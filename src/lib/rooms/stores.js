@@ -21,6 +21,8 @@ export const frameImg = writable({
 export const frameVideo = writable({
     show: false,
     inner: "",
+    title : "",
+    desc: ""
 });
 export const innerHeight = writable(0);
 export const innerWidth = writable(0);

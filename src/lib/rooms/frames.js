@@ -144,11 +144,9 @@ export async function toggleVisualizeFrame() {
                 show: true, 
                 inner: `
                     <iframe class="frame" style='width:60vw; height:60vh' src="${src}" frameborder="0" allowfullscreen></iframe>
-                    <div class="frameinfo">
-					    <h1>${title}</h1>
-					    <p>${desc}</p>
-				    </div>
-                `
+                `,
+                title,
+                desc
             }))
 
             document.exitPointerLock();
@@ -184,6 +182,9 @@ export async function toggleVisualizeFrame() {
         // $(".center").children("img").show();
 
         frameImg.update(() => ({
+            show: false
+        }));
+        frameVideo.update(() => ({
             show: false
         }));
 

@@ -38,7 +38,7 @@ export const formatSearch = (query: string) => {
 
     for (const tag of tags) {
         string += `tags like ? AND `;
-        array.push(`% ${tag} %`); 
+        array.push(`%${tag}%`); 
     }
 
     for (const name of names) {

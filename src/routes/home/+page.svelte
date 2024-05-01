@@ -6,12 +6,12 @@
 	import { tick } from "svelte";
     let categories_data: {[key: string]: string[]}[] = [
         {
-            "Art" : ["1800", "Renaissance", "Painting"],
-            "Biography" : ["1900", "Biography"],
-            "Sciences" : ["2000", "Sciences"],
-            "Science Fiction" : ["2100", "Science Fiction"],
-            "Geography" : ["2200", "Geography"],
-            "History" : ["2300", "History"],
+            "Dipinto" : ["Moderna", "Rinascimento"],
+            "Musica" : ["Moderna", "Classica"],
+            // "Sciences" : ["2000", "Sciences"],
+            // "Science Fiction" : ["2100", "Science Fiction"],
+            // "Geography" : ["2200", "Geography"],
+            // "History" : ["2300", "History"],
         },
         {
             "1800": ["1800", "Renaissance", "Painting"],
