@@ -1,38 +1,9 @@
-# create-svelte
+# Space4Art
+## A free and open platform to create and share 3D virtual rooms
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Space4Art is born as a project for a school robotics competition (First Lego League), for the category "_innovative project_".
+It's a web app written in **sveltekit** and deloyed with **Docker** (that was actually my first time using it, so don't look at the compose code, i got much better by now). It uses **three.js** under the hood to create and render the 3D rooms.
 
-## Creating a project
+I'm actually very proud of this, because it was my first fully completed and deployed project (took me two weeks to figure it out how to install ssl certs) but I've learned so much from this.
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Got us 3rd place in Boston at FLL WPI Open 2024.
