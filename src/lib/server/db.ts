@@ -1,6 +1,7 @@
-import mysql from "mysql2/promise";
+import postgres from 'postgres'
 
-export const pool = mysql.createPool("mysql://root:password@db:3306/space4art");
+const sql = postgres("postgresql://postgres:password@localhost:5432/postgres")
+export default sql
 
 export const formatRow = (data: any) => {
     let string = "set ", array = [];

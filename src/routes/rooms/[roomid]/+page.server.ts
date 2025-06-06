@@ -1,24 +1,24 @@
 import type { PageServerLoad, Actions, RequestEvent } from "./$types";
-import { pool } from "$lib/server/db"
 import { type Rooms } from "$lib/types";
 import { hasPerms } from "$lib/server/perms";
+import sql from "$lib/server/db";
 
 export const load: PageServerLoad = async ({ request, locals, params }: RequestEvent) => {
 	const id = params.roomid;
 
-  const [[room]] = await pool.execute<Rooms[]>('select * from rooms where uuid = ?', [id]);
+  const [room] = await sql`select * from rooms where uuid = ${id}`;
 
   if (!room) return;
 
-  const [frames] = await pool.execute<Rooms[]>('select * from scenes where room_id = ?', [room.id]);
+  const frames = await sql`select * from scenes where room_id = ${room.id}`;
   
-  const perms = await hasPerms(room.id.toString(), locals.user?.id);
+  // const perms = await hasPerms(room.id.toString(), locals.user?.id);
 
 	return {
     room,
     frames,
     id,
-    perms
+    perms: true
   };  
 };
 

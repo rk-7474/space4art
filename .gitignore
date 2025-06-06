@@ -12,3 +12,4 @@ static/files
 static/routes
 static/templates
 database.sql
+*.glb

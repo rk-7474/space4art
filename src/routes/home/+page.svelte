@@ -50,11 +50,11 @@
     }
 
     export let data: {
-        feed: Rooms[] | null
+        feed: any[] | null
     };
 
     export let form: {
-        feed: Rooms[] | null
+        feed: any[] | null
     };
 
     let y: number;
@@ -80,6 +80,8 @@
             // move(sfondo, x, y, 0.02);
         }
 
+        console.log("moved");
+        
         last.x = clientX;
         last.y = clientY;
     }

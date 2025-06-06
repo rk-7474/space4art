@@ -24,6 +24,7 @@
 	}
 
 	onMount(async () => {
+		console.log(data)
 		if (data && data.room) {
 			$state = "loading";
 			await createScene(data.id, data.room, data.frames, three_scene, false, data.perms);

@@ -39,10 +39,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@lucia-auth/adapter-mysql": "^3.0.0",
-		"lucia": "^3.0.1",
-		"mysql2": "^3.9.1",
-		"oslo": "^1.1.1",
+		"postgres": "^3.4.7",
 		"three": "^0.160.1",
 		"three-addons": "^1.2.0",
 		"unzipper": "^0.10.14"
